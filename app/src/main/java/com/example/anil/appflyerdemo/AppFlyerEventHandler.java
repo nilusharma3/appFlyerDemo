@@ -17,11 +17,11 @@ public final class AppFlyerEventHandler {
     //DELETE THESE BELOW DURING IMPLEMENTATION USE YOUT OWN EVENTS
     // just event name can be defined separately in an interface or class or can be given directly
     // prefer event name in lower case and less than 45 in length
-    public static String EVENT_A = "evnt_a_both removed";
-    public static String EVENT_B = "event_b_both_removed";
-    public static String EVENT_C = "CCCC";
-    public static String EVENT_A1 = "A1aaaaaa";
-    public static String EVENT_A2 = "event_a2_expppp!";
+    public static String EVENT_A = "evnt_a";
+    public static String EVENT_B = "event_b";
+    public static String EVENT_C = "event_c";
+    public static String EVENT_A1 = "event_a1";
+    public static String EVENT_A2 = "event_a2";
 
     private static Application mApplication;
 

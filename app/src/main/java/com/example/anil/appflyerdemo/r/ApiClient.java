@@ -1,8 +1,13 @@
 package com.example.anil.appflyerdemo.r;
 
+import android.util.Log;
+
 import java.util.HashMap;
 import java.util.Map;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -28,6 +33,21 @@ public class ApiClient {
                     .build();
         }
         return retrofit;
+    }
+    private void d() {
+        ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
+        Call<CommonResponse> call = apiInterface.getAppVersion("en");
+        call.enqueue(new Callback<CommonResponse>() {
+            @Override
+            public void onResponse(final Call<CommonResponse> call, final Response<CommonResponse> response) {
+                Log.e("ddddd", "ddddd " + response.message() + response.body().toString());
+            }
+
+            @Override
+            public void onFailure(final Call<CommonResponse> call, final Throwable t) {
+
+            }
+        });
     }
 
 }
