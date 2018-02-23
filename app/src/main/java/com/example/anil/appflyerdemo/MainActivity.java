@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnEventC:
                 triggerEventC();
-                //d();
                 break;
             case R.id.btnMove:
                 moveToSecondActivity();
@@ -94,22 +93,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         evenData.put(AFInAppEventParameterName.CITY, "UK");
         evenData.put("field_for_a", "event C");
         AppFlyerEventHandler.logAppFlyerEvent(AppFlyerEventHandler.EVENT_C, evenData);
-    }
-
-    private void d() {
-        ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
-        Call<CommonResponse> call = apiInterface.getAppVersion("en");
-        call.enqueue(new Callback<CommonResponse>() {
-            @Override
-            public void onResponse(final Call<CommonResponse> call, final Response<CommonResponse> response) {
-                Log.e("ddddd", "ddddd " + response.message() + response.body().toString());
-            }
-
-            @Override
-            public void onFailure(final Call<CommonResponse> call, final Throwable t) {
-
-            }
-        });
     }
 
 
